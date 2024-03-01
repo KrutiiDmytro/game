@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.Python
+venv/.Python
 build/
 develop-eggs/
 dist/
@@ -161,3 +161,5 @@ cython_debug/
 
 Game
 Game.pub
+
+.DS_Store

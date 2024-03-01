@@ -1,17 +1,24 @@
-import pygame
-import sys
+import pygame, controls
+from gun import Gun
 
-def run():
 
-    pygame.init()
-    screen = pygame.display.set_mode((1200, 800))
-    pygame.display.set_caption('Жалкое подобие')
-    bg_color = (0, 0, 0)
+pygame.init()
+screen = pygame.display.set_mode((600, 600))
+pygame.display.set_caption('Жалкое подобие')
+icon = pygame.image.load('Image/8386051.png')
+pygame.display.set_icon(icon)
+bg_color = (0, 0, 0)
+gun = Gun(screen)
 
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+ranning = True
+while ranning:
+    controls.events()
+    pygame.display.update(gun)
 
-        screen.fill(bg_color)
-        pygame.display.flip()
+    screen.fill(bg_color)
+    gun.output_to_screen()
+    pygame.display.flip()
+
+
+
+
