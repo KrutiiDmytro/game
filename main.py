@@ -1,4 +1,5 @@
 import pygame, controls
+import sys
 from gun import Gun
 
 
@@ -12,8 +13,9 @@ gun = Gun(screen)
 
 ranning = True
 while ranning:
-    controls.events()
-    pygame.display.update(gun)
+    controls.events(gun)
+    gun.update_gun()
+    pygame.display.update()
 
     screen.fill(bg_color)
     gun.output_to_screen()

@@ -7,5 +7,18 @@ def events(gun):
             ranning = False
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_DOWN:
-                gun.rect.centr += 1
+            # to right
+            if event.key == pygame.K_d:
+                gun.mright = True
+            # to left
+            elif event.key == pygame.K_a:
+                gun.mleft = True
+        elif event.type == pygame.KEYUP:
+            # to right
+            if event.key == pygame.K_d:
+                gun.mright == False
+            # to left
+            elif event.key == pygame.K_a:
+                gun.mleft == False
+
+                gun.mright == False
