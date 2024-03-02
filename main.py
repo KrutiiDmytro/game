@@ -10,7 +10,7 @@ pygame.display.set_icon(icon)
 bg_color = (0, 0, 0)
 gun = Gun(screen)
 
-ranning = True
+ranning = Truegit
 while ranning:
     controls.events()
     pygame.display.update(gun)
