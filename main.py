@@ -10,14 +10,14 @@ pygame.display.set_icon(icon)
 bg_color = (0, 0, 0)
 gun = Gun(screen)
 
-ranning = Truegit
+ranning = True
 while ranning:
     controls.events()
     pygame.display.update(gun)
 
     screen.fill(bg_color)
     gun.output_to_screen()
-    pygame.display.flip()
+    pygame.display.flip()   # hugtvuhb
 
 
 
