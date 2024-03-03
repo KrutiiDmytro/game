@@ -1,6 +1,6 @@
 import pygame, controls
-import sys
 from gun import Gun
+from pygame.sprite import Group
 
 
 pygame.init()
@@ -10,17 +10,12 @@ icon = pygame.image.load('Image/8386051.png')
 pygame.display.set_icon(icon)
 bg_color = (0, 0, 0)
 gun = Gun(screen)
+bullets = Group()
 
 ranning = True
 while ranning:
-    controls.events(gun)
+    controls.events(screen, gun, bullets)
     gun.update_gun()
+    bullets.update()
     pygame.display.update()
-
-    screen.fill(bg_color)
-    gun.output_to_screen()
-    pygame.display.flip()   # hugtvuhb
-
-
-
-
+    controls.screen_update(bg_color, screen, gun, bullets)

@@ -1,6 +1,7 @@
 import pygame, sys
+from bullet import Bullet
 
-def events(gun):
+def events(screen, gun, bullets):
     # обработка событий
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -13,12 +14,20 @@ def events(gun):
             # to left
             elif event.key == pygame.K_a:
                 gun.mleft = True
+            elif event.key == pygame.K_SPACE:
+                new_bullet = Bullet(screen, gun)
+                bullets.add(new_bullet)
         elif event.type == pygame.KEYUP:
             # to right
             if event.key == pygame.K_d:
-                gun.mright == False
+                gun.mright = False
             # to left
             elif event.key == pygame.K_a:
-                gun.mleft == False
+                gun.mleft = False
 
-                gun.mright == False
+def screen_update(bg_color, screen, gun, bullets):
+    screen.fill(bg_color)
+    for bullet in bullets.sprites():
+        bullet.draw_bullet()
+    gun.output_to_screen()
+    pygame.display.flip()
